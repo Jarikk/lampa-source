@@ -300,4 +300,5 @@ exports.test         = series(test);
 exports.default = parallel(watch, browser_sync);
 exports.debug = series(enable_debug_mode, this.default);
 exports.build = series(merge, plugins, sass_task, lang_task, sync_web, build_web);
+exports.pack_all = series(this.pack_webos, this.pack_tizen, this.pack_github, this.pack_plugins);
 
